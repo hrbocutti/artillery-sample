@@ -1,0 +1,9 @@
+config:
+  target: "http://localhost:8081"
+  phases:
+    - duration: 30
+      arrivalCount: 100
+  plugins:
+    ensure: { }
+    apdex: { }
+    expect: { }

@@ -1,0 +1,35 @@
+scenarios:
+  - name: "Full Capacity"
+    flow:
+      - get:
+          url: "/v1/full_capacity"
+          expect:
+            - statusCode: 503
+
+  - name: "Timeouts"
+    flow:
+      - get:
+          url: "/v1/timeouts"
+          expect:
+            - statusCode: 504
+
+  - name: "Slow Response"
+    flow:
+      - get:
+          url: "/v1/slow_response"
+          expect:
+            - statusCode: 200
+
+  - name: "Error Response"
+    flow:
+      - get:
+          url: "/v1/error_response"
+          expect:
+            - statusCode: 500
+
+  - name: "Normal Response"
+    flow:
+      - get:
+          url: "/v1/normal_response"
+          expect:
+            - statusCode: 200
